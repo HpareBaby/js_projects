@@ -11,6 +11,9 @@
                 <input type="text" placeholder="Enter city name" spellcheck="false">
                 <button><img src="images/search.png"></button>
             </div>
+            <div class="error">
+                <p class="js-error-msg">Invalid city name</p>
+            </div>
             <div class="weather">
                 <img src="images/rain.png" class="weather-icon">
                 <h1 class="temp">22°C</h1>
@@ -44,26 +47,37 @@
 
             async function checkWeather(city) {
                 const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-                let data = await response.json();
-                console.log(data);
-                document.querySelector(".city").innerHTML = data.name;
-                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-                document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-                document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-                let condition = data.weather[0].main;
-                if (condition === "Clouds") {
-                    weatherIcon.src = "images/clouds.png";
-                } else if (condition === "Clear") {
-                    weatherIcon.src = "images/clear.png";
-                } else if (condition === "Rain") {
-                    weatherIcon.src = "images/rain.png";
-                } else if (condition === "Drizzle") {
-                    weatherIcon.src = "images/drizzle.png";
-                } else if (condition === "Mist") {
-                    weatherIcon.src = "images/drizzle.png";
+                if (response.status >= 400) {
+                    let msg = await response.json();
+                    document.querySelector(".error").style.display = "block";
+                    document.querySelector(".weather").style.display = "none";
+                    if (response.status === 401) {
+                        document.querySelector(".js-error-msg").innerText = `${msg.message}`;
+                    }
                 }
-                document.querySelector(".weather").style.display = "block";
+                else {
+                    let data = await response.json();
+                    console.log(data);
+                    document.querySelector(".city").innerHTML = data.name;
+                    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+                    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+                    let condition = data.weather[0].main;
+                    if (condition === "Clouds") {
+                        weatherIcon.src = "images/clouds.png";
+                    } else if (condition === "Clear") {
+                        weatherIcon.src = "images/clear.png";
+                    } else if (condition === "Rain") {
+                        weatherIcon.src = "images/rain.png";
+                    } else if (condition === "Drizzle") {
+                        weatherIcon.src = "images/drizzle.png";
+                    } else if (condition === "Mist") {
+                        weatherIcon.src = "images/drizzle.png";
+                    }
+                    document.querySelector(".weather").style.display = "block";
+                    document.querySelector(".error").style.display = "none";
+                }
             }
             // checkWeather();
             searchBtn.addEventListener("click", () => {
