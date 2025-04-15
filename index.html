@@ -73,7 +73,7 @@
                     } else if (condition === "Drizzle") {
                         weatherIcon.src = "images/drizzle.png";
                     } else if (condition === "Mist") {
-                        weatherIcon.src = "images/drizzle.png";
+                        weatherIcon.src = "images/mist.png";
                     }
                     document.querySelector(".weather").style.display = "block";
                     document.querySelector(".error").style.display = "none";
@@ -82,6 +82,11 @@
             // checkWeather();
             searchBtn.addEventListener("click", () => {
                 checkWeather(searchBox.value);
+            });
+            searchBox.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    checkWeather(searchBox.value);
+                }
             });
 
         </script>
