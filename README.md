@@ -72,7 +72,7 @@ weather-app/
 This project is open-source and available under the [MIT License](LICENSE).
 
 ## Reference
-- The reference of the project: ![How To Make Weather App Using JavaScript Step By Step Explained by GreatStack](https://www.youtube.com/watch?v=MIYQR-Ybrn4)
+- The reference of the project: [How To Make Weather App Using JavaScript Step By Step Explained by GreatStack](https://www.youtube.com/watch?v=MIYQR-Ybrn4)
 
 ---
 
