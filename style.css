@@ -53,3 +53,20 @@ body {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
+#imgBox {
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0; /* maximum height is initially set to 0px hiding the container's content */
+    overflow: hidden; /* ensures that any content exceeding the container's current dimension will not be displayed; */
+    transition: max-height 2s;
+    /* any changes to the max-height will transition over 2 seconds resulting in smooth animation */
+}
+#imgBox img {
+    width: 100%;
+    padding: 10px;
+}
+#imgBox.show-img {
+    max-height: 300px; /* when show-img class is added to the #imgBox, maximum height becomes 300px */
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
