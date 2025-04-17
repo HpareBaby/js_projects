@@ -24,8 +24,8 @@ To see the app in action, open `index.html` in a browser after setting your API 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/weather-app.git
-   cd weather-app
+   git clone https://github.com/HpareBaby/js_projects.git -b simple-weather-app
+   cd simple-weather-app
    ```
 
 2. Get your API key from [OpenWeatherMap](https://openweathermap.org/api).
@@ -40,7 +40,7 @@ To see the app in action, open `index.html` in a browser after setting your API 
 ## File Structure
 
 ```
-weather-app/
+simple-weather-app/
 ├── images/
 │   ├── clear.png
 │   ├── clouds.png
