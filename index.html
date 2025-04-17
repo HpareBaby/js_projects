@@ -12,7 +12,7 @@
         <div id="imgBox">
             <img src="" id="qrImage">
         </div>
-        <button class="submit-button" onclick="generateQR()">Generate QR Code</button>
+        <button class="submit-button">Generate QR Code</button>
     </div>
     <script>
         let imgBox = document.getElementById("imgBox");
@@ -30,6 +30,17 @@
                 }, 1000);
             }
         }
+
+        let btn = document.querySelector(".submit-button");
+        btn.addEventListener("click", () => {
+            generateQR();
+        });
+
+        qrText.addEventListener("keydown", (event) => {
+            if (event.key === 'Enter') {
+                generateQR();            
+            }
+        });
     </script>
 </body>
 </html>
