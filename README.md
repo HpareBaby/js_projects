@@ -24,7 +24,7 @@ To see the app in action, open `index.html` in a browser after setting your API 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/HpareBaby/js_projects.git -b simple-weather-app
+   git clone https://github.com/HpareBaby/js_projects.git -b simple-weather-app simple-weather-app
    cd simple-weather-app
    ```
 
