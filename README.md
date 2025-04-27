@@ -23,7 +23,7 @@ To run this project locally, simply follow these steps:
 
 ### 1. Clone the repository
 ```bash
-   git clone https://github.com/HpareBaby/js_projects.git -b simple-qr-generator
+   git clone https://github.com/HpareBaby/js_projects.git -b simple-qr-generator simple-qr-generator
 ```
 
 ### 2. Navigate to the project directory
